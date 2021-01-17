@@ -24,6 +24,7 @@ async function getapi(url) {
     console.log(overallList);
     this.peristData()
     show(data);
+    hideloader();
 }
 getapi(api_url)
 function hideloader() {
