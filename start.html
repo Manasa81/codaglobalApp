@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game</title>
+    <script src="startGame.js" type="text/javascript" async></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+
+    .diamond {
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        align-items: center;
+        border-bottom-color: red;
+        position: relative;
+        top: -50px;
+    }
+
+    .diamond:after {
+        content: '';
+        position: absolute;
+        left: -50px;
+        top: 50px;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-top-color: red;
+    }
+
+    .hr.new4 {
+        border: 1px solid red;
+    }
+
+
+    .circle {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        background: #fff;
+        border: 3px solid #000;
+        color: #000;
+        align-items: center;
+        text-align: center;
+        font: 32px Arial, sans-serif;
+         margin-top: 50px;
+    }
+
+    body {
+        font-family: arial;
+    }
+
+    .main {
+
+        margin: 2%;
+    }
+
+    .card {
+        width: 10%;
+        height: 250px;
+        display: inline-block;
+        box-shadow: 2px 2px 20px black;
+        border-radius: 5px;
+        margin: 4%;
+        margin-left: 2cm;
+        align-items: center;
+
+    }
+
+    .image img {
+        width: 100%;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+
+
+
+    }
+
+    .title {
+
+        text-align: center;
+        padding: 10px;
+        font-size: 13px;
+
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .des {
+        padding: 3px;
+        text-align: center;
+        margin-top: -40px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+
+    }
+    #button1{
+        font-weight: bold;
+        border: 1px solid green;
+
+    }
+    #button2{
+        font-weight: bold;
+        border: 1px solid red;
+    }
+    #random{
+        font-weight: bolder;
+        font-size: xx-large;
+        color: black;
+    }
+
+    button {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    button:hover {
+        background-color: black;
+        color: white;
+        transition: .5s;
+        cursor: pointer;
+    }
+    .container {
+  height: 690px;
+  position: relative;
+}
+
+#vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  margin-left: 13.3cm;
+}
+#back{
+    background-color: teal;
+    width: 8%;
+    font-size: larger
+}
+</style>
+
+<body>
+    <button onclick="goBack()">back</button>
+    <div class="container">
+        <div id="vertical-center">
+
+        </div>
+        <div id="main"></div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

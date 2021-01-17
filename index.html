@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<style>
+    body {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3OTt-4JoxLCPWf9UdayPjYIhGOuGSzgaJCQ&usqp=CAU);
+        background-size: 330px 120px;
+        background-position: left top;
+        background-repeat: no-repeat;
+        padding: 75px;
+        margin-left: 10px;
+        margin-top: 30px;
+        background-color: black;
+    }
+
+
+
+    #employees {
+        margin-top: 20%;
+        background-color: powderblue;
+        font-size: 20px;
+    }
+
+    #selected {
+        margin-top: 20%;
+        background-color: white;
+        font-size: 20px;
+
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .col-sm-2 col-md-6 col-lg-4 {
+        background-color: powderblue;
+    }
+    .parent {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  background-color: white;
+}
+.bs {
+  background-color: green;
+  color: white;
+  width: 100px;
+  font-size: medium;
+}
+    .splitRight {
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+        defer></script>
+    <script>
+        setTimeout(function () {
+            $(document).ready(function () {
+                $('#employees').DataTable({
+                    responsive: true
+                });
+            });
+
+        }, 2000);
+    </script>
+    <script src="script.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+    <title>double-or-nothing</title>
+
+</head>
+
+<body>
+    <div id="overall">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status" id="loading">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2 col-md-6 col-lg-4">
+                    <div id="enableStart"></div>
+                    <table id="selected"></table>
+                </div>
+                <div class="col-sm-9 col-md-8 col-lg-8">
+                    <div class="parent">
+                        <span class="itemright">
+                            <button class="bs" onclick="start()">START</button>
+                        </span>
+                        <span class="itemleft">
+                            <button class="bs" onclick="resetAll()">RESET</button>
+                        </span>
+                        <span class="itemcenter">
+                            <button class="bs" onclick="sortByBet()">SortByBet</button>
+                        </span>
+                        <span class="itemright">
+                            <button class="bs" onclick="sortByPrice()">SortByPrice</button>
+                        </span>
+
+                    </div>
+                    <table id="employees" class="display" style="width:100%"></table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<style>
+
+</style>
+
+
+</html>
