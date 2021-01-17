@@ -19,7 +19,6 @@ if (selectedList.length === 0) {
             overallList[index]["fate"] = "WON"
             overallList[index]["winnings"] = overallList[index]["winnings"] + 1
             r[2] = overallList[index]["Price"]
-            print(r)
             document.getElementById("main").innerHTML  += `<div class="card" style="border:4px solid green";>
 
             <div class="image">
