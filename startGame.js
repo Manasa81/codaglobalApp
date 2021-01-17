@@ -3,7 +3,7 @@ var selectedList = JSON.parse(localStorage.getItem('selectedList'))
 var overallList = JSON.parse(localStorage.getItem('overallList'))
 if (selectedList.length === 0) {
     alert("please select players in the home page")
-    window.location.href = "/"
+    window.location.href = "https://manasa81.github.io/codaglobalApp/"
 }else {
     var x = Math.floor((Math.random() * 10) + 1);
     if (x === 10) {
@@ -65,5 +65,5 @@ if (selectedList.length === 0) {
 }
 function goBack() {
     // params = JSON.stringify(overallList);
-    window.location.href = "/";
+    window.location.href = "https://manasa81.github.io/codaglobalApp/";
 }
