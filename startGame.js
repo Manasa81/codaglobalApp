@@ -2,18 +2,14 @@
 var selectedList = JSON.parse(localStorage.getItem('selectedList'))
 var overallList = JSON.parse(localStorage.getItem('overallList'))
 var originalList=[].concat(selectedList)
-if (selectedList.length === 0) {
-    alert("please select players in the home page")
-    window.location.href = "https://manasa81.github.io/codaglobalApp/"
-} else {
-    var x = Math.floor((Math.random() * 10) + 1);
-    if (x === 10) {
+var x = Math.floor((Math.random() * 10) + 1);
+if (x === 10) {
         x = x - 1
     }
 
     document.getElementById("random").innerHTML += `<h1>YOUR BET IS "${x}"</h1>`
     display(selectedList,false)
-}
+
 function display(sl,filter) {
     let tab = ``
     for (let r of sl) {
@@ -81,7 +77,7 @@ function sortByPrice() {
 }
 function goBack() {
     // params = JSON.stringify(overallList);
-    window.location.href = "https://manasa81.github.io/codaglobalApp/";
+    window.history.back();
 }
 function search() {
     field = document.getElementById("search")

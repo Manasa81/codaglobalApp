@@ -120,6 +120,9 @@ function sortByPrice() {
 
 
 function start() {
+    if (selectedList.length === 0) {
+        alert("please select players in the home page")
+    }
     if (selectedList.length > 9) {
         let len=selectedList.length-9
         alert("You shouldn't select more than 9 players.Please uncheck "+len+" players")
