@@ -66,6 +66,10 @@
         height: 100%;
         width: 100%;
     }
+    #hedding{
+        margin-bottom: 2%;
+        text-align: center;
+    }
 </style>
 
 <head>
@@ -83,16 +87,18 @@
         defer></script>
     <script>
         setTimeout(function () {
-            document.getElementById("loading").innerHTML=""
             $(document).ready(function () {
                 $('#employees').DataTable({
                     responsive: true
                 });
             });
+            document.getElementById("loading").innerHTML = ""
 
         }, 2000);
+
+
     </script>
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -104,11 +110,9 @@
 </head>
 
 <body>
+    <h1 id="hedding">Welcome!Please select your playing 9</h1>
     <div id="overall">
         <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status" id="loading">
-                <span class="sr-only">Loading...</span>
-            </div>
         </div>
 
         <div class="container-fluid">
@@ -117,7 +121,7 @@
                     <div id="enableStart"></div>
                     <table id="selected"></table>
                 </div>
-                <h1 id="loading">Loading please wait..</h1>
+
                 <div class="col-sm-9 col-md-8 col-lg-8">
                     <div class="parent">
                         <span class="itemright">
@@ -133,9 +137,11 @@
                             <button class="bs" onclick="sortByPrice()">SortByPrice</button>
                         </span>
 
-                    </div>
 
-                    <table id="employees" class="display" style="width:100%"></table>
+                    </div>
+                    <h1 id="loading">Loading please wait..</h1>
+                    <table id="employees" class="display" style="width:100%">
+                    </table>
 
                 </div>
             </div>

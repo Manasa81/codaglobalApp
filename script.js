@@ -1,6 +1,7 @@
 const api_url =
     "https://s3-ap-southeast-1.amazonaws.com/he-public-data/bets7747a43.json";
-var selectedList=[]
+var selectedList = []
+
 async function getapi(url) {
 
     // Storing response
@@ -8,10 +9,6 @@ async function getapi(url) {
 
     // Storing data in form of JSON
     const data = await response.json();
-    console.log(data);
-    if (response) {
-        hideloader();
-    }
     for (var i = 0; i < data.length; i++) {
         if (data[i].Name.indexOf(' ') >= 0) {
             data[i].Name = data[i]["Name"].split(' ').join('_');
@@ -26,12 +23,10 @@ async function getapi(url) {
     show(data);
 }
 getapi(api_url)
-function hideloader() {
-    document.getElementById('loading').style.display = 'none';
-}
+
 // Function to define innerHTML for HTML table
 async function show(data) {
-
+    // document.getElementById("loading").innerHTML = ""
     let tab =
         `<thead>
         <tr>
@@ -47,7 +42,7 @@ async function show(data) {
     for (let r of data) {
         tab += `<tr height="50%">
         <td>
-        <input type="checkbox" id=${this} name=${this} value=${[r.Name, r.Bet, r.Price, r["Profile Image"],r["winnings"],r["fate"],r["id"]]} onclick='handleClick(this);'/>
+        <input type="checkbox" id="myCheck" name=${this} value=${[r.Name, r.Bet, r.Price, r["Profile Image"],r["winnings"],r["fate"],r["id"]]} onclick='handleClick(this);'/>
         </td>
     <td>${getName(r.Name)} </td>
     <td>
@@ -59,7 +54,9 @@ async function show(data) {
 
 
     // Setting innerHTML as tab variable
-    document.getElementById("employees").innerHTML = tab+`</tbody>`;
+    document.getElementById("employees").innerHTML = tab + `</tbody>`;
+
+
 
 }
 function getName(name) {
@@ -80,10 +77,8 @@ function handleClick(cb) {
         selectedList = filtered;
     }
     this.peristData();
-    console.log(selectedList);
     let tab = ``
     for (let r of selectedList) {
-        console.log(r);
         tab += `<thead>
 
             <tr>
@@ -126,7 +121,8 @@ function sortByPrice() {
 
 function start() {
     if (selectedList.length > 9) {
-        alert("you shouldn't select more than 9 players")
+        let len=selectedList.length-9
+        alert("You shouldn't select more than 9 players.Please uncheck "+len+" players")
     } else {
         window.location.href = "start.html";
     }
