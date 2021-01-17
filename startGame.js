@@ -13,9 +13,8 @@ if (selectedList.length === 0) {
     let tab = ``
     document.getElementById("vertical-center").innerHTML += `<h1 id="random">Your bet is ${x}<\h1>`
     for (let r of selectedList) {
-        console.log(r);
         let index = parseInt(r[6])
-        if (parseInt(r[1]) === 6) {
+        if (parseInt(r[1]) === x) {
             overallList[index]["Price"] = overallList[index]["Price"] * 2
             overallList[index]["fate"] = "WON"
             overallList[index]["winnings"] = overallList[index]["winnings"] + 1
