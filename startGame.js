@@ -4,7 +4,7 @@ var overallList = JSON.parse(localStorage.getItem('overallList'))
 var originalList=[].concat(selectedList)
 if (selectedList.length === 0) {
     alert("please select players in the home page")
-    window.location.href = "/"
+    window.location.href = "https://manasa81.github.io/codaglobalApp/"
 } else {
     var x = Math.floor((Math.random() * 10) + 1);
     if (x === 10) {
@@ -81,7 +81,7 @@ function sortByPrice() {
 }
 function goBack() {
     // params = JSON.stringify(overallList);
-    window.location.href = "/";
+    window.location.href = "https://manasa81.github.io/codaglobalApp/";
 }
 function search() {
     field = document.getElementById("search")
