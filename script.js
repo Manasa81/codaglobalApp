@@ -24,14 +24,14 @@ async function getapi(url) {
     console.log(overallList);
     this.peristData()
     show(data);
-    hideloader();
 }
 getapi(api_url)
 function hideloader() {
     document.getElementById('loading').style.display = 'none';
 }
 // Function to define innerHTML for HTML table
-function show(data) {
+async function show(data) {
+
     let tab =
         `<thead>
         <tr>
